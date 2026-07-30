@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>JS Function</h2>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+
+
+    <script>
+        // main
+        // function call
+         Mycalculator();
+         tempFunction()
+
+        // function
+        function Mycalculator(a, b){
+            // let x = 5*6;
+            document.getElementById("demo1").innerHTML="The multiplication of 5 and 6 is: " + 5*6;
+        };
+
+        // anonymous function
+        const x = function (a,b){return a+b};
+        document.getElementById("demo2").innerHTML = "The addition is: " + x(10,12);
+        document.getElementById("demo3").innerHTML = "The addition of 5 and 6 is: " + x(5,6);
+
+        // constructor function
+        const myMultiply = new Function("a", "b", "return a*b");
+        document.getElementById("demo4").innerHTML = "The multiplication of 18 and 2 is: " + myMultiply(18,2);
+
+        // temp function
+        function tempFunction() {
+            const f = 70;
+            const c = 5/9 * (f - 32);
+            document.getElementById("demo5").innerHTML = "The temperature in Celsius is: " + c.toFixed(2) + "degree celcius.";
+        };
+    </script>
+</body>
+</html>

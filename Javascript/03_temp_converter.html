@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temp Convertor</title>
+ 
+    <!-- Bootstrap CDN Links -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+ 
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+ 
+                <h2 class="text-center mb-4">Temperature Convertor</h2>
+ 
+                <form class="bg-light p-4 rounded">
+ 
+                    <div class="row mb-3 align-items-center">
+                        <label class="col-sm-4 col-form-label fw-bold">
+                            Fahrenheit:
+                        </label>
+                        <div class="col-sm-8">
+                            <input type="number" onchange="tempFunction()" class="form-control" id="f" name="fah">
+                        </div>
+                    </div>
+ 
+                    <div class="row mb-4 align-items-center">
+                        <label class="col-sm-4 col-form-label fw-bold">
+                            Celsius:
+                        </label>
+                        <div class="col-sm-8">
+                            <input type="number" class="form-control" id="c" name="cel">
+                        </div>
+                    </div>
+ 
+                    <div class="text-center">
+                        <button type="reset" class="btn btn-secondary">
+                            Clear
+                        </button>
+                    </div>
+ 
+                </form>
+ 
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function tempFunction(){
+            let fah = document.getElementById("f").value;
+            // console.log(fah);
+            let cel = 5/9 * (fah - 32);
+            document.getElementById("c").value = cel.toFixed(2);
+        }
+    </script>
+</body>
+</html>
+ 

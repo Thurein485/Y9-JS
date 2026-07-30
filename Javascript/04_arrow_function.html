@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+
+    <script>
+        // arrow function with parameters
+        let myFunction = (a, b) => a*b;
+        document.getElementById("demo1").innerHTML = "The multiplication of 4 & 5 is: "+ myFunction(4,5);
+
+        // arrow function without parameters
+        const hw = () => "Hello World!";
+        document.getElementById("demo2").innerHTML = hw();
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="/image/basketball.png" onmouseover="bigImg(this)" onmouseout="normalImg(this)" alt="basketball" width="100px" height="100px">
+    <p>Click the text below!</p>
+    <p id="myP" onmousedown="mouseDown()" onmouseup="mouseUp()">
+        The mouseDown() function sets the color of this text to red.
+        The mouseUp() function sets the color of this text to blue.
+    </p>
+
+    <script>
+        function bigImg(x) {
+            x.style.width = "200px";
+            x.style.height = "200px";
+        }
+        function normalImg(x) {
+            x.style.width = "100px";
+            x.style.height = "100px";
+        }
+        function mouseDown() {
+            document.getElementById("myP").style.color = "red";
+        }
+        function mouseUp() {
+            document.getElementById("myP").style.color = "blue";
+        }
+    </script>
+</body>
+</html>

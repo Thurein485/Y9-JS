@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traditional Foods</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Traditional Foods Around the World</h1>
+
+    <div class="container">
+
+        <div class="left">
+            <h2>Select a Country</h2>
+
+            <select id="country" onchange="showFood()">
+                <option value="">-- Select a Country --</option>
+                <option value="Japan">Japan</option>
+                <option value="Italy">Italy</option>
+                <option value="Myanmar">Myanmar</option>
+                <option value="India">India</option>
+                <option value="France">France</option>
+            </select>
+        </div>
+
+        <div class="right">
+            <h2 id="foodName">Traditional Food</h2>
+
+            <p id="description">
+                Please select a country from the dropdown menu.
+            </p>
+
+            <img id="foodImage" src="images/world-food.jpg" alt="Food Image">
+        </div>
+
+    </div>
+
+    <script>
+
+        const foods = {
+
+            Japan: {
+                name: "Sushi",
+                description: "Sushi is Japan's famous traditional dish made with rice and fresh seafood.",
+                image: "images/image (22).jpeg"
+            },
+
+            Italy: {
+                name: "Pizza",
+                description: "Pizza is a traditional Italian dish topped with cheese and various ingredients.",
+                image: "images/image (24).jpeg"
+            },
+
+            Myanmar: {
+                name: "Mohinga",
+                description: "Mohinga is Myanmar's national dish made with rice noodles and fish broth.",
+                image: "images/image (25).jpeg"
+            },
+
+            India: {
+                name: "Biryani",
+                description: "Biryani is a flavorful rice dish cooked with spices and meat or vegetables.",
+                image: "images/image (26).jpeg"
+            },
+
+            France: {
+                name: "Croissant",
+                description: "The croissant is a buttery, flaky pastry that is one of France's best-known foods.",
+                image: "images/image (23).jpeg"
+            }
+
+        };
+
+        function showFood() {
+
+            const country = document.getElementById("country").value;
+            const food = foods[country];
+
+            document.getElementById("foodName").innerHTML = food.name;
+            document.getElementById("description").innerHTML = food.description;
+            document.getElementById("foodImage").src = food.image;
+
+        }
+
+    </script>
+
+</body>
+</html>
