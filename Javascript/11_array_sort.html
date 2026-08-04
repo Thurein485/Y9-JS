@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JS Array</h1>
+    <button type="button" onclick="randomFunction()">Check Random</button>
+
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+
+    <script>
+        const color_list = ["red", "green", "black", "blue", "pink"];
+        color_list.sort();
+        color_list.reverse();
+        console.log(color_list);
+
+        // Sorting numbers in ascending order
+        const points = [45, 20, 10, 5, 100, 7];
+        points.sort(function(a,b){return a-b});
+        points.reverse();
+        console.log("Sorted Number List is: ", points);
+
+        // Sort random
+        console.log("Random Number is: ", Math.random());
+
+        function randomFunction() {
+            points.sort(function(){return 0.5 - Math.random()});
+            document.getElementById("demo1").innerHTML = "Random order of points is: ", points;
+        }
+    </script>
+</body>
+</html>
