@@ -12,7 +12,24 @@
 
     <script>
         const color_list = ["red", "green", "black", "blue", "pink"];
+        // Variables to save array elements
+        let txt = "";
+        color_list.forEach(myFunction);
+        document.getElementById("demo1").innerHTML = txt;
         
+
+        function myFunction(value,index,array){
+            txt += array + "<br>";
+        };
+
+        // map method
+        const num1 = [10, 5, 7, 3, 1];
+        const num2 = num1.map(multiplyFun);
+        document.getElementById("demo2").innerHTML = num2;
+
+        function multiplyFun(value){
+            return value *2;
+        }
     </script>
 </body>
 </html>
