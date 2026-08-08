@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JS Conditional</h1>
+
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+
+    <script>
+        const d = new Date().getHours();
+
+        if (d<18) {
+            document.getElementById("demo1").innerHTML = "Good Day!";
+        }
+        else if(d<16) {
+            document.getElementById("demo1").innerHTML = "Good Afternoon!";
+        }
+        else {
+            document.getElementById("demo1").innerHTML = "Good Night!";
+        }
+
+    </script>
+</body>
+</html>
