@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+
+    <style>
+        #box {
+            background-color: skyblue;
+            width: 80%;
+            height: 300px;
+            margin: auto;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        input {
+            width: 60%;
+            padding: 10px;
+            margin-left: 20%;
+        }
+
+        p {
+            margin-left: 30%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="box">
+        <h1>Enter your mark!</h1>
+
+        <input type="number" id="mark" oninput="grading()">
+
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function grading() {
+            let mark = document.getElementById("mark").value;
+            let grade;
+
+            if (mark >= 90) {
+                grade = "A";
+            } 
+            else if (mark >= 80) {
+                grade = "B";
+            } 
+            else if (mark >= 70) {
+                grade = "C";
+            } 
+            else if (mark >= 60) {
+                grade = "D";
+            } 
+            else {
+                grade = "F";
+            }
+
+            document.getElementById("result").innerHTML =
+                "Your grading is " + grade;
+        }
+    </script>
+
+</body>
+</html>

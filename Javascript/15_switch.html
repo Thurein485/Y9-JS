@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JS Switch</h1>
+    <p id="demo1"></p>
+
+    <script>
+        let trafficLight = "green";
+        let txt = "";
+        switch(trafficLight){
+            case "red":
+            txt = "Stop Driving!";
+            break;
+            
+            case "green":
+            txt = "Keep Driving!"
+            break;
+            
+            case "yellow":
+            txt = "Slow Down!";
+            break;
+            default:
+            txt = "Wrong traffic Light color!";
+        };
+        document.getElementById("demo1").innerHTML = txt;
+    </script>
+</body>
+</html>
