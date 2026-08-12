@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Loop</title>
+</head>
+<body>
+    <h1>JS Loop</h1>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+
+    <script>
+    let fruits = ["Apple", "Banana", "Orange", "Mango", "Grape"];
+    let output = "";
+
+    for (let i = 0; i < fruits.length; i++) {
+        output += fruits[i] + "<br>";
+    }
+
+    document.getElementById("demo1").innerHTML = output;
+</script>
+</body>
+</html>
