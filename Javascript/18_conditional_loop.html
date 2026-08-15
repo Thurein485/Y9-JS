@@ -6,26 +6,23 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>JS Conditional loop</h1>
+    <h1>Conditional Loop with Boolean</h1>
     <p id="demo1"></p>
-    <p id="demo2"></p>
-    <p id="demo3"></p>
 
     <script>
-        let i = 1;
+        let i = 0;
         let txt = "";
-        while (i<6){
-            txt+= i + "'<br>";
+
+        while(true){
+            txt += i + "<br>";
             i++;
+
+            // to stop the loop
+            if (i == 4){
+                break;
+            };
         }
         document.getElementById("demo1").innerHTML = txt;
-
-        // do while loop
-        let count = 1;
-        do {
-            console.log("Hello");
-            count++;
-        } while (count < 6);
     </script>
 </body>
 </html>
