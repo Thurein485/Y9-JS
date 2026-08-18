@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>JS For Loops</h1>
+
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+
+    <script>
+        // Normal for loop
+        let txt1 = "";
+
+        for (let i = 1; i < 6; i++) {
+            txt1 += i + "<br>";
+        }
+
+        document.getElementById("demo1").innerHTML = txt1;
+
+
+        // for...in loop
+        let fruits = ["Apple", "Banana", "Orange"];
+        let txt2 = "";
+
+        for (let i in fruits) {
+            txt2 += i + "<br>";
+        }
+
+        document.getElementById("demo2").innerHTML = txt2;
+
+
+        // for...of loop
+        let txt3 = "";
+
+        for (let fruit of fruits) {
+            txt3 += fruit + "<br>";
+        }
+
+        document.getElementById("demo3").innerHTML = txt3;
+    </script>
+
+</body>
+</html>
