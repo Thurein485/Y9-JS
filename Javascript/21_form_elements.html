@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Access HTML Form Elements</h2>
+    <form action="" id="myForm">
+        <label for="">First Name:</label>
+        <input type="text" name="fname" value="John"> <br><br>
+        <label for="">Last Name:</label>
+        <input type="text" name="lname" value="Doe"> <br><br>
+        <input type="submit" value="Submit">
+    </form>
+    <p id="demo1"></p>
+
+    <script>
+        let x = document.forms["myForm"];
+        console.log(x);
+        // let txt = "";
+
+        document.getElementById("demo1").innerHTML = x.elements[0].value;
+    </script>
+</body>
+</html>

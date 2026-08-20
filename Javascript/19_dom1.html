@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Today is Tuesday!</h1>
+    <p>Welcome to our class</p>
+    <p>EDUSN Digital School</p>
+    <p>Hello</p>
+    <p id="demo"></p>
+    <div id="demo"></div>
+    <h3>Container 2</h3>
+    <div id="div2">
+        <p>Hi</p>
+        <p>Hey!</p>
+    </div>
+    <h3>Container 3</h3>
+    <div id="div3"></div>
+
+    <script>
+        const element = document.getElementsByTagName('p');
+        console.log(element);
+        // console.log("First Array Element is: "+ element[0].innerHTML);
+        let stop = element.length;
+        let txt = "";
+        for(let i=0; i<stop; i++){
+            txt += element[i].innerHTML + "<br> ";
+        }
+        document.getElementById("demo").innerHTML = txt;
+
+        // access second container
+        let x = document.getElementById("div2");
+        const y = x.getElementsByTagName('p');
+        document.getElementById("div3").innerHTML = y[0].innerHTML + " " + y[1].innerHTML;
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Access HTML Element by Class Name</h2>
+    <p>Welcome</p>
+    <p class="intro">This is my first program.</p>
+    <p class="intro">HTML DOM Lessons</p>
+    <div class="intro">Container Element</div>
+    <hr>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+
+    
+    <script>
+        let x = document.getElementsByClassName("intro");
+        document.getElementById("demo1").innerHTML = x[2].innerHTML;
+
+        let y = document.querySelectorAll("div.intro");
+        document.getElementById("demo2").innerHTML = "Our div is: " + y[0].innerHTML;
+    </script>
+</body>
+</html>
