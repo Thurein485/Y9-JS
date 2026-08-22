@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Creating the list with array elements</h2>
+    <ol id="colors"></ol>
+
+    <script>
+    const colors = ["red", "green", "blue", "dark", "gold"];
+    colors.forEach(colorFunction);
+
+    function colorFunction(value, index, array){
+        const listElement = document.createElement("li"); // create html li element
+        listElement.textContent = value; // add array value to the li element
+        document.getElementById("colors").appendChild(listElement); // add the li element to the ol element
+    };
+</script>
+</body>
+</html>
