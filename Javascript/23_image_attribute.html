@@ -3,14 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Change Image</title>
 </head>
 <body>
+
     <h2>Changing Image Attribute with JS</h2>
-    <img id="imgId" src="basketball.png" alt="basketball" style="width: 300px; height: 250px;">
-    
+
+    <img id="imgId" src="basketball.png" alt="basketball"
+         style="width: 300px; height: 250px;">
+
+    <br><br>
+
+    <button onclick="changeImage()">Change Image</button>
+
     <script>
-        document.getElementById("imgId").src = "football.png";
+        function changeImage() {
+            let image = document.getElementById("imgId");
+
+            if (image.src.includes("basketball.png")) {
+                image.src = "football.png";
+            } else {
+                image.src = "basketball.png";
+            }
+        }
     </script>
+
 </body>
 </html>
