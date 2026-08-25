@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Enrollment</title>
+
+    <style>
+      body {
+        background-color: cornflowerblue;
+        font-family: Arial;
+        padding: 50px;
+      }
+
+      input {
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+      }
+
+      button {
+        padding: 10px 40px;
+        border: none;
+        border-radius: 5px;
+        background-color: gray;
+        color: white;
+      }
+
+      .main {
+        display: flex;
+        gap: 250px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="main">
+      <div>
+        <h1>Enroll Students for this year.</h1>
+
+        <form onsubmit="addStudent(event)">
+          <input type="text" id="studentInput" placeholder="Enter student name" />
+        </form>
+
+        <p>Enrolled Student List:</p>
+
+        <div id="studentList"></div>
+      </div>
+
+      <div>
+        <p>Enter list number to delete...</p>
+
+        <input type="number" id="numberInput" />
+
+        <button onclick="deleteStudent()">Clear</button>
+      </div>
+    </div>
+
+    <script>
+      let students = [];
+
+      function addStudent(event) {
+        event.preventDefault();
+
+        let input = document.getElementById("studentInput");
+
+        let name = input.value;
+
+        if (name !== "") {
+          students.push(name);
+
+          input.value = "";
+
+          displayStudents();
+        }
+      }
+
+      function displayStudents() {
+        let list = document.getElementById("studentList");
+
+        list.innerHTML = "";
+
+        for (let i = 0; i < students.length; i++) {
+          list.innerHTML += i + 1 + ". " + students[i] + "<br>";
+        }
+      }
+
+      function deleteStudent() {
+        let number = document.getElementById("numberInput").value;
+        number = Number(number);
+
+        if (number >= 1 && number <= students.length) {
+          students.splice(number - 1, 1);
+          document.getElementById("numberInput").value = "";
+          displayStudents();
+        }
+      }
+    </script>
+  </body>
+</html>
