@@ -40,8 +40,9 @@
     </div>
  
     <script>
+        let code = "111";
         function myValidate(){
-            const x = document.form["myform"];
+            const x = document.forms["myform"];
             const name = x.elements[0].value;
             const e = x.elements[1].value;
             const v = e.includes("@"); // to save return value true or false for email
@@ -51,7 +52,19 @@
             const a = document.getElementById("link");
             if(name == "" || e == "" || c == "" || p == ""){
                 alert("You must fill all inputs.");
-        }
+            }
+            else if(v == false){
+                document.getElementById("ewarning").style.display = "block";
+            }
+            else if(c != code){
+                alert("Your login code is not correct.");
+            }
+            else if(p.length < 8){
+                document.getElementById("pwarning").style.display = "block";
+            }
+            else{
+                document.getElementById("link").href = "success.html";
+            }
         }
     </script>
 </body>

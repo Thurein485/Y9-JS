@@ -24,11 +24,20 @@
         border-radius: 5px;
         background-color: gray;
         color: white;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: rgb(100, 100, 100);
       }
 
       .main {
         display: flex;
         gap: 250px;
+      }
+
+      #validationCheckIndex {
+        color: red;
       }
     </style>
   </head>
@@ -38,36 +47,46 @@
       <div>
         <h1>Enroll Students for this year.</h1>
 
-        <form onsubmit="addStudent(event)">
+        <form
+          onsubmit="
+            addStudent();
+            return false;
+          "
+        >
           <input type="text" id="studentInput" placeholder="Enter student name" />
         </form>
 
         <p>Enrolled Student List:</p>
 
-        <div id="studentList"></div>
+        <ol id="studentList"></ol>
       </div>
 
       <div>
         <p>Enter list number to delete...</p>
 
-        <input type="number" id="numberInput" />
+        <input type="number" id="numberInput" value="1" />
 
         <button onclick="deleteStudent()">Clear</button>
+
+        <p id="validationCheckIndex"></p>
       </div>
     </div>
 
     <script>
       let students = [];
 
-      function addStudent(event) {
-        event.preventDefault();
-
+      function addStudent() {
         let input = document.getElementById("studentInput");
 
         let name = input.value;
 
-        if (name !== "") {
-          students.push(name);
+        if (name == "") {
+          input.placeholder = "Please enter a student name.";
+        } else if (!isNaN(name)) {
+          input.value = "";
+          input.placeholder = "Name cannot contain numbers.";
+        } else {
+          students[students.length] = name;
 
           input.value = "";
 
@@ -81,17 +100,24 @@
         list.innerHTML = "";
 
         for (let i = 0; i < students.length; i++) {
-          list.innerHTML += i + 1 + ". " + students[i] + "<br>";
+          list.innerHTML += "<li>" + students[i] + "</li>";
         }
       }
 
       function deleteStudent() {
         let number = document.getElementById("numberInput").value;
+
         number = Number(number);
 
-        if (number >= 1 && number <= students.length) {
+        if (students.length == 0) {
+          document.getElementById("validationCheckIndex").innerHTML = "Invalid clear! There is no name. Enter the name first";
+        } else if (number < 1 || number > students.length) {
+          document.getElementById("validationCheckIndex").innerHTML = "That student number does not exist.";
+        } else {
           students.splice(number - 1, 1);
+
           document.getElementById("numberInput").value = "";
+
           displayStudents();
         }
       }
