@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+
+    <style>
+        body {
+            background-color: #6c757d;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            margin-top: 35px;
+        }
+
+        .calculator {
+            width: 750px;
+            margin: 35px auto;
+            padding: 35px;
+            background-color: #f8f9fa;
+            border-radius: 12px;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        label {
+            width: 210px;
+            font-size: 24px;
+            text-align: right;
+        }
+
+        input {
+            width: 380px;
+            padding: 16px;
+            margin-left: 25px;
+            font-size: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+
+        select {
+            width: 108px;
+            padding: 14px;
+            font-size: 24px;
+            margin-left: 210px;
+        }
+
+        button {
+            padding: 13px 18px;
+            font-size: 22px;
+            margin-left: 23px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Simple Calculator</h1>
+
+    <div class="calculator">
+
+        <div class="row">
+            <label>Number 1:</label>
+            <input type="number" id="num1">
+        </div>
+
+        <div class="row">
+            <label>Number 2:</label>
+            <input type="number" id="num2">
+        </div>
+
+        <div class="row">
+            <select id="operator">
+                <option value="+">+</option>
+                <option value="-">−</option>
+                <option value="*">×</option>
+                <option value="/">÷</option>
+            </select>
+
+            <button onclick="calculate()">=</button>
+
+            <input type="text" id="result" readonly>
+        </div>
+
+    </div>
+
+    <script>
+        function calculate() {
+
+            let num1 = Number(document.getElementById("num1").value);
+            let num2 = Number(document.getElementById("num2").value);
+            let operator = document.getElementById("operator").value;
+
+            let result;
+
+            if (operator === "+") {
+                result = num1 + num2;
+            }
+            else if (operator === "-") {
+                result = num1 - num2;
+            }
+            else if (operator === "*") {
+                result = num1 * num2;
+            }
+            else if (operator === "/") {
+                result = num1 / num2;
+            }
+
+            document.getElementById("result").value = result;
+        }
+    </script>
+
+</body>
+</html>
