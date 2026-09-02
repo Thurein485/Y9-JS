@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" id="btn">Check Date</button>
+    <span id="demo1"></span>
+    <br><br>
+    <button type="button" id="btn2">Click Me</button>
+    <p id="demo2"></p>
+
+    <script>
+        document.getElementById("btn").addEventListener("click", displayDate);
+        function displayDate() {
+            document.getElementById("demo1").innerHTML = Date();
+        }
+
+        const x = document.getElementById("btn2");
+        x.addEventListener("click", function(){alert("First Function!")});
+        x.addEventListener("click", function(){alert("Second Function!")});
+
+        //function firstFunction() {
+            //document.getElementById("demo2").innerHTML = "First function executed.";
+       // }
+    </script>
+</body>
+</html>
