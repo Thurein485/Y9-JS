@@ -1,0 +1,18 @@
+body {
+    background: url(nature.jpg);
+    background-size: cover;
+}
+.box div {
+    width: 100px;
+    height: 80px;
+    background-color: lightgreen;
+    font-size: 40px;
+    text-align: center;
+}
+.label div {
+    width: 100px;
+    height: 40px;
+    background-color: lightblue;
+    font-size: 22px;
+    text-align: center;
+}
