@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local storage</title>
+</head>
+<body>
+    <h1>Local storage</h1>
+    <script>
+        const userObj = {
+            username: "Thurein",
+            email: "linthantthurein@gmail.com",
+            password: "123456"
+        }
+        // Store data in local storage
+        localStorage.setItem('user', JSON.stringify(userObj));
+
+        // Retrieve data from local storage
+        const storeUserData = localStorage.getItem('user');
+        if (storeUserData) {
+            const userData = JSON.parse(storeUserData);
+            document.write(userData.username);
+        } 
+        else {
+            document.write("No data found in local storage.");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+fieldset {
+    border: 2px dashed black;
+    text-align: center;
+}
+legend i{
+    font-size: 40px;
+}
+.counter {
+    font-size: 36px;
+}
+body {
+    background-color: cornflowerblue;
+}

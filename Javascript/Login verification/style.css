@@ -1,0 +1,23 @@
+form {
+    width:100%;
+    padding: 20px;
+   
+  }
+  input {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+#userid {
+    background-color: blue;
+    padding:5px 8px;
+    border-radius: 8px;
+  }
+  .profile {
+    position:relative;
+  }
+  .aside {
+    position:absolute;
+    left:-100%;
+  }
