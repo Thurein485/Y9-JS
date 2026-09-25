@@ -1,0 +1,61 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: cornflowerblue;
+    display:flex;
+    justify-content: center;
+    margin:0;
+}
+.form {
+    margin-top:30px;
+    background-color: blanchedalmond;
+    width:450px;
+    border-radius: 10px;
+}
+.input {
+    width:100%;
+    padding:20px;
+    border-radius: 10px 10px 0 0;
+    border:none;
+    font-size:20px;
+    font-family: cursive;    
+}
+.input::placeholder {
+    color:lightgrey;
+}
+.list {
+    padding:0;
+    margin:0;
+}
+.list li {
+    list-style-type: none;
+    padding:15px;
+    border-bottom: 1px solid black;
+    position:relative;
+}
+.list li .bi-check-square-fill {
+    color:green;
+    position:absolute;
+    right:40px;
+    top:50%;
+    transform:translateY(-50%);
+    cursor: pointer;
+}
+.list li .bi-trash-fill {
+    color:red;
+    position:absolute;
+    right:20px;
+    top:50%;
+    transform:translateY(-50%);
+    cursor: pointer;
+}
+/* styles for li when checked */
+.list li.checked {
+    color:darkgray;
+    text-decoration: line-through;
+}
+.list li.checked .bi-check-square-fill{
+    color:darkgray;
+}
+ 
