@@ -29,12 +29,25 @@ function to_do_list(task){
 
     //check btn
     const checkBtn = document.createElement("div");
-    check.innerHTML = `<i class="bi bi-check-square-fill"></i>`
+    checkBtn.innerHTML = `<i class="bi bi-check-square-fill"></i>`
     item.appendChild(checkBtn);
+    
     //trash btn
     const trashBtn = document.createElement("div");
     trashBtn.innerHTML = `<i class="bi bi-trash-fill"></i>`
     item.appendChild(trashBtn);
+
+    // add event listener to check button
+    checkBtn.addEventListener("click", function(){
+        item.classList.toggle("checked");
+        updateLocalStorage();
+    });
+    // add event listener to trash button
+    trashBtn.addEventListener("click", function(){
+        item.remove();
+        updateLocalStorage();
+    });
+    updateLocalStorage();
 }
 
 //to store li to local storage
