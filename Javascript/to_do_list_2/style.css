@@ -1,0 +1,100 @@
+body {
+    background-color: white;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 21px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.form-label {
+    font-size: 12px;
+    margin-bottom: 3px;
+}
+
+.form-control {
+    font-size: 12px;
+    border-radius: 2px;
+}
+
+#noteTitle {
+    height: 20px;
+    padding: 2px 5px;
+}
+
+#noteBody {
+    resize: vertical;
+}
+
+#notesContainer {
+    margin-top: 5px;
+}
+
+.note-card {
+    margin-bottom: 15px;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.note-header {
+    background-color: #e5e5e5;
+    padding: 8px 15px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.note-title {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.note-date {
+    font-size: 10px;
+    color: #777;
+}
+
+.note-body {
+    padding: 14px 15px;
+    min-height: 65px;
+    font-size: 11px;
+}
+
+.note-actions {
+    text-align: right;
+    padding: 0 5px 8px;
+}
+
+.note-actions button {
+    background: none;
+    border: none;
+    padding: 0 3px;
+
+    font-size: 10px;
+    color: #666;
+
+    text-decoration: underline;
+}
+
+.note-actions button:hover {
+    color: black;
+}
+
+#notesContainer:empty::after {
+    content: "No notes yet.";
+    display: block;
+
+    text-align: center;
+    color: #999;
+    font-size: 12px;
+    margin-top: 20px;
+}

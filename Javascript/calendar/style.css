@@ -1,0 +1,361 @@
+body {
+
+  background-color: #f1f5f9;
+
+  min-height: 100vh;
+
+  padding-top: 20px;
+
+  padding-bottom: 40px;
+
+  color: #1e293b;
+
+}
+
+.card {
+
+  border: none;
+
+  border-radius: 20px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+
+  overflow: hidden;
+
+  background-color: #ffffff;
+
+}
+
+.calendar-header {
+
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.9), rgba(168, 85, 247, 0.9)), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80');
+
+  background-size: cover;
+
+  background-position: center;
+
+  padding: 36px 32px !important;
+
+}
+
+.calendar-header h2 {
+
+  font-weight: 700;
+
+  font-size: 28px;
+
+  letter-spacing: -0.5px;
+
+}
+
+.calendar-header .custom-btn {
+
+  border: 1px solid rgba(255, 255, 255, 0.4);
+
+  border-radius: 12px;
+
+  width: 42px;
+
+  height: 42px;
+
+  padding: 0;
+
+  backdrop-filter: blur(4px);
+
+  transition: all 0.2s ease;
+
+}
+
+.calendar-header .custom-btn:hover {
+
+  background-color: rgba(255, 255, 255, 0.25);
+
+  border-color: #ffffff;
+
+  transform: translateY(-1px);
+
+}
+
+.card-body {
+
+  padding: 32px !important;
+
+}
+
+.row .weekdays {
+
+  color: #64748b;
+
+  font-size: 13px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.8px;
+
+  margin-bottom: 12px !important;
+
+}
+
+.calendar-days .row {
+
+  margin-bottom: 8px;
+
+}
+
+.calendar-days .row > .day {
+
+  width: 14.28%;
+
+  height: 60px;
+
+  font-size: 16px;
+
+  font-weight: 500;
+
+  color: #334155;
+
+  background-color: #ffffff !important;
+
+  border: 1px solid #f1f5f9 !important;
+
+  border-radius: 12px !important;
+
+  margin: 0 2px;
+
+  transition: all 0.2s ease;
+
+}
+
+.calendar-days .row > .day:hover {
+
+  background-color: #f8fafc !important;
+
+  color: #6366f1;
+
+  border-color: #cbd5e1 !important;
+
+  transform: translateY(-2px);
+
+}
+
+.calendar-days .row > .day.active {
+
+  background: linear-gradient(135deg, #6365f1e7, #4f46e5) !important;
+
+  color: #ffffff !important;
+
+  font-weight: 700;
+
+  border: none !important;
+
+  box-shadow: 0 8px 16px rgba(99, 102, 241, 0.35) !important;
+
+  transform: scale(1.02);
+
+}
+
+.calendar-days .day:disabled {
+
+  background-color: #ffffff !important;
+
+  border-color: transparent !important;
+
+  opacity: 0;
+
+}
+
+.eventContainer .eventCreate {
+
+  background-color: #ffffff;
+
+  padding: 32px;
+
+  border-radius: 20px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+
+}
+
+.eventContainer p {
+
+  font-size: 15px;
+
+  font-weight: 500;
+
+  color: #64748b;
+
+  margin-bottom: 20px;
+
+}
+
+#selectedDate {
+
+  font-weight: 700;
+
+  color: #4f46e5;
+
+  background-color: #e5ebff;
+
+  padding: 6px 12px;
+
+  border-radius: 8px;
+
+  font-size: 14px;
+
+}
+
+.eventInput {
+
+  border: 1.5px solid #e2e8f0;
+
+  border-radius: 12px;
+
+  padding: 12px 16px;
+
+  font-size: 15px;
+
+  margin-bottom: 12px !important;
+
+  transition: all 0.2s ease;
+
+}
+
+.eventInput:focus {
+
+  border-color: #6366f1;
+
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.12);
+
+  outline: none;
+
+}
+
+.add-event-btn {
+
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+
+  border: none;
+
+  border-radius: 12px;
+
+  padding: 12px;
+
+  font-weight: 600;
+
+  font-size: 15px;
+
+  box-shadow: 0 6px 16px rgba(99, 102, 241, 0.25);
+
+  transition: all 0.2s ease;
+
+}
+
+.add-event\:hover {
+
+  transform: translateY(-1px);
+
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.35);
+
+}
+
+.eventTitle {
+
+  font-weight: 700;
+
+  font-size: 18px;
+
+  color: #0f172a;
+
+  margin-top: 28px !important;
+
+}
+
+#eventList {
+
+  padding-left: 0;
+
+  list-style-type: none;
+
+  margin-top: 16px;
+
+}
+
+#eventList li {
+
+  background-color: #f8fafc;
+
+  border: 1px solid #f1f5f9;
+
+  border-radius: 7px;
+
+  padding: 12px 16px;
+
+  margin-bottom: 10px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  font-size: 15px;
+
+  color: #334155;
+
+  font-weight: 500;
+
+  transition: all 0.2s ease;
+
+}
+
+#eventList li:hover {
+
+  background-color: #ffffff;
+
+  border-color: #e2e8f0;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+
+  transform: translateX(2px);
+
+}
+
+#eventList li div{
+
+    color: #94a3b8;
+
+    cursor: pointer;
+
+    padding: 6px;
+
+    border-radius: 8px;
+
+    transition: all 0.2s ease;
+
+}
+
+#eventList li div:hover {
+
+  color: #ef4444;
+
+  background-color: #fee2e2;
+
+}
+
+.calendar-days .row > .day.event-day {
+
+  background-color: #e0e7ff !important;
+
+  background-image: none !important;
+
+  color: #4338ca !important;
+
+  font-weight: 600;
+
+}
+
+.today {
+
+    border: 3px solid  green !important;
+
+}

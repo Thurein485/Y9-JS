@@ -1,0 +1,323 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #f4f7f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+
+/* =========================
+   LARGE DEVICE SLIDER
+========================= */
+
+.slider-container {
+    position: relative;
+    width: 80%;
+    max-width: 1100px;
+    height: 65vh;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.left-slide {
+    position: absolute;
+    width: 38%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: transform 0.6s ease-in-out;
+}
+
+.left-slide > div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding-left: 40px;
+    padding-right: 70px;
+}
+
+.left-slide h2 {
+    font-size: 37px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+}
+
+.left-slide p {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.6;
+    opacity: 0.95;
+}
+
+
+/* Slide Colors */
+
+.slide-spring {
+    background: linear-gradient(135deg, #ff7eee, #ab2f8a);
+    color: #ffc8f0;
+}
+
+.slide-summer {
+    background: linear-gradient(135deg, #beffa4, #86ff5e);
+    color: #0d3500;
+}
+
+.slide-monsoon {
+    background: linear-gradient(135deg, #ecffaf, #d9ff71);
+    color: black;
+}
+
+.slide-autumn {
+    background: linear-gradient(135deg, #fed098, #e4895f);
+    color: #ffffff;
+}
+
+.slide-winter {
+    background: linear-gradient(135deg, #8eacff, #6877ff);
+    color: #ffffff;
+}
+
+
+/* Right Images */
+
+.right-slide {
+    width: 62%;
+    height: 100%;
+    position: absolute;
+    left: 38%;
+    top: 0;
+    transition: transform 0.6s ease-in-out;
+}
+
+.right-slide > div {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* Desktop Buttons */
+
+.action-button button {
+    position: absolute;
+    left: 38%;
+    top: 50%;
+    border: none;
+    color: #333;
+    background-color: #a1c2ff;
+    font-size: 20px;
+    padding: 14px 18px;
+    cursor: pointer;
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease,
+        color 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.action-button .down-button {
+    transform: translateX(-100%);
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.action-button .up-button {
+    transform: translateY(-100%);
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.action-button .down-button:active {
+    transform: translateX(-100%) scale(0.95);
+}
+
+.action-button .up-button:active {
+    transform: translateY(-100%) scale(0.95);
+}
+
+
+/* =========================
+   SMALL DEVICE SLIDER
+========================= */
+
+.slider-container-sm {
+    display: none;
+}
+
+
+/* =========================
+   TABLET / MOBILE
+========================= */
+
+@media (max-width: 992px) {
+
+    body {
+        padding: 20px;
+    }
+
+    .slider-container {
+        display: none;
+    }
+
+    .slider-container-sm {
+        display: block;
+        position: relative;
+        width: 85%;
+        max-width: 500px;
+        height: 75vh;
+        overflow: hidden;
+        border-radius: 16px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    }
+
+
+    /* Top Text Slider */
+
+    .slider-container-sm .top-slide {
+        display: flex;
+        width: 500%;
+        height: 40%;
+        transition: transform 0.6s ease-in-out;
+    }
+
+    .slider-container-sm .top-slide > div {
+        width: 20%;
+        min-width: 20%;
+        height: 100%;
+        flex-shrink: 0;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+
+        padding: 20px 25px;
+
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .slider-container-sm .top-slide h2 {
+        font-size: 30px;
+        font-weight: 700;
+        margin-bottom: 10px;
+        letter-spacing: 1px;
+    }
+
+    .slider-container-sm .top-slide p {
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 300;
+        opacity: 0.95;
+    }
+
+
+    /* Bottom Image Slider */
+
+    .slider-container-sm .bottom-slide {
+        display: flex;
+        width: 500%;
+        height: 60%;
+        transition: transform 0.6s ease-in-out;
+    }
+
+    .slider-container-sm .bottom-slide > div {
+        width: 20%;
+        min-width: 20%;
+        height: 100%;
+        flex-shrink: 0;
+
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+
+    /* Mobile Buttons */
+
+    .action-button-sm {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        z-index: 100;
+    }
+
+    .action-button-sm button {
+        position: absolute;
+        border: none;
+        color: #333;
+        background-color: #a1c2ff;
+        font-size: 20px;
+        padding: 12px 18px;
+        cursor: pointer;
+
+        transition:
+            background-color 0.2s ease,
+            transform 0.2s ease,
+            color 0.2s ease;
+
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .action-button-sm .left-button {
+        transform: translateX(-100%);
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+    }
+
+    .action-button-sm .right-button {
+        transform: translateY(-100%);
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+    }
+
+}
+
+
+/* =========================
+   VERY SMALL PHONES
+========================= */
+
+@media (max-width: 480px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .slider-container-sm {
+        width: 100%;
+        height: 80vh;
+    }
+
+    .slider-container-sm .top-slide h2 {
+        font-size: 26px;
+    }
+
+    .slider-container-sm .top-slide p {
+        font-size: 13px;
+        line-height: 18px;
+    }
+
+    .slider-container-sm .top-slide > div {
+        padding: 18px 20px;
+    }
+
+    .action-button-sm button {
+        font-size: 18px;
+        padding: 10px 15px;
+    }
+}
